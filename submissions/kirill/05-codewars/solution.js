@@ -25,3 +25,15 @@ function firstNonConsecutive (arr) {
 }
 // END Find the first non-consecutive number
 
+// Filling an array (part 1)
+function arr(N){
+    let retArr =[];
+
+    for(let i=0;i<N;i++){
+        retArr.push(i);
+    }
+    return retArr;
+}
+// END Filling an array (part 1)
+
+
