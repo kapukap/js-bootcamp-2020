@@ -8,4 +8,12 @@ function getSumOfArrPows(array, pow){
 }
 // END SpeedCode #2 - Array Madness
 
+// Find the Difference in Age between Oldest and Youngest Family Members (Using Spreads)
+function differenceInAges(ages){
+    let max = Math.max(...ages);
+    let min = Math.min(...ages);
+    return [min, max, max-min];
+}
+// END Find the Difference in Age between Oldest and Youngest Family Members
+
 
