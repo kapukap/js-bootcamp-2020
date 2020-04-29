@@ -73,3 +73,28 @@ function correctPolishLetters(string) {
     return string.join('');
 }
 // END Polish alphabet
+
+// Asterisk it
+function asteriscIt(n) {
+    if(typeof n === 'object'){
+        n = n.toString().replace(/\,/g, '');
+    }else{
+        n = n.toString().split('');
+    }
+
+    return isEven(n).join('');
+}
+
+
+function isEven(args){
+    let arr=[];
+    for(let i=0;i<args.length;i++){
+        if(args[i]%2===0 && args[i+1]%2===0){
+            arr.push(args[i],'*');
+        }else{
+            arr.push(args[i]);
+        }
+    }
+    return arr;
+}
+// END Asterisk it
