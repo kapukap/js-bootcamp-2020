@@ -98,3 +98,24 @@ function isEven(args){
     return arr;
 }
 // END Asterisk it
+
+// Ironman Triathlon
+function iTri(s){
+    let triatlon = {
+        Swim:2.4,
+        Bike: 112,
+        Run: 26.2
+    };
+    let allWay = triatlon.Swim + triatlon.Bike + triatlon.Run;
+    if(s>0){
+        if(s<triatlon.Swim){return {'Swim' : ((allWay -s).toFixed(2) +' to go!').toString()} ;}
+        else if(s<(triatlon.Swim + triatlon.Bike)){ return {'Bike' : ((allWay -s).toFixed(2) +' to go!').toString()} ;}
+        else if(allWay - s>10){return {'Run' : ((allWay -s).toFixed(2) +' to go!').toString()};}
+        else if((allWay - s)<=10&&(allWay - s)>0){return {'Run' : 'Nearly there!'};}
+        else{return 'You\'re done! Stop running!';}
+    }
+
+    return 'Starting Line... Good Luck!';
+}
+// END Ironman Triathlon
+
