@@ -119,3 +119,26 @@ function iTri(s){
 }
 // END Ironman Triathlon
 
+// Counting Valleys
+function countingValleys(s) {
+    let lv=0;
+    let counter=0;
+    s = s.split('');
+
+    for(let i=0;i<s.length;i++){
+        if(s[i] ==='U'){
+            lv+=1;
+            if((lv-1<0)&&(lv===0)){
+                counter++;
+            }
+        }
+        else if(s[i] === 'D'){
+            lv-=1;
+        }
+        else if(s[i] === 'F'){
+            lv+=0;
+        }
+    }
+    return counter;
+}
+// END Counting Valleys
