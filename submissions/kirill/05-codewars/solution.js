@@ -142,3 +142,25 @@ function countingValleys(s) {
     return counter;
 }
 // END Counting Valleys
+
+// Find the Middle of the Product
+function findMiddle(str){
+    let arr = [];
+    if(typeof str === 'string'){
+        arr = str.match(/(\d)/g);
+    }else{return -1;}
+    if(arr===null){return -1;}
+    else{
+        arr = arr.map(item => parseInt(item));
+        arr = arr.reduce((acc, val) => acc* val).toString();
+        let arrLength = arr.length;
+        if(arr.length%2===0){
+            if(arr[(arrLength/2)-1] ==='0'){
+                return parseInt(arr[arrLength/2])
+            }
+            return parseInt(arr[(arrLength/2)-1]+arr[arrLength/2]);
+        }
+        return parseInt(arr[Math.floor(arrLength/2)]);
+    }
+}
+// END Find the Middle of the Product
