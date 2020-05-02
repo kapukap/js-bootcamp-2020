@@ -164,3 +164,15 @@ function findMiddle(str){
     }
 }
 // END Find the Middle of the Product
+
+// Largest 5 digit number in a series
+function solution(digits){
+    digits = digits.toString();
+    let arr=[];
+    for(let i=0; i<digits.length; i++){
+        arr.push(digits.slice(i,5+i));
+    }
+    arr = arr.map(item => parseInt(item));
+    return Math.max(...arr);
+}
+// END Largest 5 digit number in a series
