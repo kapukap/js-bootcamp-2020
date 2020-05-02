@@ -176,3 +176,15 @@ function solution(digits){
     return Math.max(...arr);
 }
 // END Largest 5 digit number in a series
+
+// Consecutive Ducks
+function consecutiveDucks(num) {
+    while(num > 2){
+        if(num%2!=0){
+            return true;
+        }
+        num = num/2;
+    }
+    return false
+}
+// END Consecutive Ducks
