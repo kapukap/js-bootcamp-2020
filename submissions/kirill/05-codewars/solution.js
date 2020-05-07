@@ -1,10 +1,6 @@
 // SpeedCode #2 - Array Madness
 function arrayMadness(a, b) {
-    return  getSumOfArrPows(a,2)>getSumOfArrPows(b,3);
-}
-
-function getSumOfArrPows(array, pow){
-    return array.map(item => Math.pow(item,pow) ).reduce((accum, val)=> accum + val);
+    return  a.reduce((acc, val) => acc + val**2, 0) > b.reduce((acc, val) => acc + val**3, 0);
 }
 // END SpeedCode #2 - Array Madness
 
@@ -166,7 +162,7 @@ function solution(digits){
 // Consecutive Ducks
 function consecutiveDucks(num) {
     while(num > 2){
-        if(num%2!=0){
+        if(num%2!==0){
             return true;
         }
         num = num/2;
