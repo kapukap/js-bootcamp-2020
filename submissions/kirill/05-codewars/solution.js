@@ -125,7 +125,7 @@ function findMiddle(str){
 function solution(digits){
     digits = digits.toString();
     let arr=[];
-    for(let i=0; i<digits.length; i++){
+    for(let i=0; i<digits.length-4; i++){
         arr.push(digits.slice(i,5+i));
     }
     arr = arr.map(item => parseInt(item));
