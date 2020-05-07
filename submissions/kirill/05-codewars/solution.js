@@ -111,23 +111,13 @@ function countingValleys(s) {
 
 // Find the Middle of the Product
 function findMiddle(str){
-    let arr = [];
-    if(typeof str === 'string'){
-        arr = str.match(/(\d)/g);
-    }else{return -1;}
-    if(arr===null){return -1;}
-    else{
-        arr = arr.map(item => parseInt(item));
-        arr = arr.reduce((acc, val) => acc* val).toString();
-        let arrLength = arr.length;
-        if(arr.length%2===0){
-            if(arr[(arrLength/2)-1] ==='0'){
-                return parseInt(arr[arrLength/2])
-            }
-            return parseInt(arr[(arrLength/2)-1]+arr[arrLength/2]);
-        }
-        return parseInt(arr[Math.floor(arrLength/2)]);
+    const matches = str && typeof str === 'string' && str.match(/\d/g);
+    if (!matches || matches.length === 0) {
+        return -1;
     }
+    const numb = matches.reduce((acc, val) => acc * val).toString();
+
+    return +numb.substr(Math.floor(numb.length / 2) - 1 + numb.length % 2, numb.length % 2 === 0 ? 2 : 1);
 }
 // END Find the Middle of the Product
 
