@@ -49,28 +49,9 @@ function positiveSum(arr) {
 // END Sum of positive
 
 // Polish alphabet
-let letterObj = [
-    'ą:a',
-    'ć:c',
-    'ę:e',
-    'ł:l',
-    'ń:n',
-    'ó:o',
-    'ś:s',
-    'ź:z',
-    'ż:z'
-];
-
-function correctPolishLetters(string) {
-    string = string.split('');
-    for(let i=0; i<string.length;i++){
-        for(let j=0; j<letterObj.length;j++){
-            if(string[i]===letterObj[j][0]){
-                string[i]=letterObj[j][2];
-            }
-        }
-    }
-    return string.join('');
+function correctPolishLetters(string){
+    const key = { 'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n', 'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z' };
+    return string.replace(/[ąćęłńóśźż]/g, match => key[match]);
 }
 // END Polish alphabet
 
