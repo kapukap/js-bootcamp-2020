@@ -77,30 +77,14 @@ function addSymbolIfEven(args){
 // END Asterisk it
 
 // Ironman Triathlon
-function iTri(s) {
-    let triatlon = {
-        Swim: 2.4,
-        Bike: 112,
-        Run: 26.2
-    };
-    const OVERALL_DISTANCE = triatlon.Swim + triatlon.Bike + triatlon.Run;
-    if (s > 0) {
-        if (s < triatlon.Swim) {
-            return {'Swim': ((OVERALL_DISTANCE - s).toFixed(2) + ' to go!').toString()};
-        }
-        if (s < (triatlon.Swim + triatlon.Bike)) {
-            return {'Bike': ((OVERALL_DISTANCE - s).toFixed(2) + ' to go!').toString()};
-        }
-        if (OVERALL_DISTANCE - s > 10) {
-            return {'Run': ((OVERALL_DISTANCE - s).toFixed(2) + ' to go!').toString()};
-        }
-        if ((OVERALL_DISTANCE - s) <= 10 && (OVERALL_DISTANCE - s) > 0) {
-            return {'Run': 'Nearly there!'};
-        } else {
-            return 'You\'re done! Stop running!';
-        }
-    }
-    return 'Starting Line... Good Luck!';
+function iTri(dist){
+    const TOTAL_DISTANCE = 2.4 + 112 + 26.2;
+    if (dist === 0) return 'Starting Line... Good Luck!';
+    if (dist <= 2.4) return {'Swim': `${(TOTAL_DISTANCE - dist).toFixed(2)} to go!`};
+    if (dist <= 114.4) return {'Bike': `${(TOTAL_DISTANCE - dist).toFixed(2)} to go!`};
+    if (dist <= 127) return {'Run': `${(TOTAL_DISTANCE - dist).toFixed(2)} to go!`};
+    if (dist < TOTAL_DISTANCE) return {'Run': `Nearly there!`};
+    return "You're done! Stop running!";
 }
 // END Ironman Triathlon
 
