@@ -54,7 +54,7 @@ function correctPolishLetters(string){
 // Asterisk it
 function asteriscIt(n) {
     if(Array.isArray(n)){
-        n = n.toString().replace(/\,/g, '');
+        n = n.toString().replace(/[,]/g, '');
     }else{
         n = n.toString().split('');
     }
