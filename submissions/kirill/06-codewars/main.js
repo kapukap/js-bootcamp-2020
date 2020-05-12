@@ -22,21 +22,15 @@ function sum(arr) {
 // END sum of range
 
 // reverseArray
-function reverseArray(arr) {
-    return arr.reverse();
-}
-
 function reverseArrayInPlace(arr) {
-    return arr.sort(reverse);
+    let tmp;
+    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+        tmp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = tmp;
+    }
+    return arr;
 }
-
-function reverse(a, b) {
-    if (a > b) return -1;
-    if (a === b) return 0;
-    if (a < b) return 1;
-}
-
-console.log(reverseArray(['A', 'B', 'C']));
 console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
 // END reverseArray
 
