@@ -31,6 +31,7 @@ function reverseArrayInPlace(arr) {
     }
     return arr;
 }
+
 console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
 // END reverseArray
 
@@ -91,15 +92,16 @@ console.log(counter(), counter(), counter());
 
 // telegram task 2
 function randomWalk() {
-    let arr = [];
+    let my_array = [];
     return function () {
-        let number = Math.round(Math.random() * 100);
-        if (arr.includes(number)) {
-            return randomWalk();
-        } else {
-            arr = arr.push(number);
-            return arr;
+        let numb = Math.round(Math.random() * 100);
+        if (my_array.includes(numb)) {
+            while (my_array.includes(numb)) {
+                numb = Math.round(Math.random() * 100);
+            }
         }
+        my_array.push(numb);
+        return my_array;
     }
 }
 
