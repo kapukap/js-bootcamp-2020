@@ -6,13 +6,13 @@ let task_2_btn = document.querySelector('#btn-2');
 let btn3 = document.querySelector('#btn-3');
 // Task 2
 let task_2_btn_hidden = document.querySelector('#count__btn');
-
 // Task 3
+let number = document.querySelector('#ipt-fibo');
 
-function createElem(txt) {
+function createElem(txt, container) {
     let div = document.createElement('div');
     div.textContent = txt;
-    cont_1.appendChild(div);
+    container.appendChild(div);
 }
 
 function logIn() {
@@ -38,18 +38,28 @@ function logIn() {
     } else {
         rtn = 'I don\'t know you';
     }
-    createElem(rtn);
+    createElem(rtn, cont_1);
     return rtn;
 }
+
 function addCounter() {
     let count_block = document.querySelector('.container__btn--click');
-    count_block.style.display='block';
+    count_block.style.display = 'block';
 }
-function counting(){
+
+function counting() {
     let span = document.querySelector('#count');
     span.textContent = +span.textContent + 1;
+}
+
+function fibonachi(n) {
+    return n <= 1 ? n : fibonachi(n - 1) + fibonachi(n - 2);
 }
 
 task_1_btn.addEventListener('click', logIn);
 task_2_btn.addEventListener('click', addCounter);
 task_2_btn_hidden.addEventListener('click', counting);
+btn3.addEventListener('click', function () {
+    let numb = fibonachi(number.value);
+    createElem(numb, cont_3);
+});
