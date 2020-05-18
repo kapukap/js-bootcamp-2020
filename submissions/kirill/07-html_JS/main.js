@@ -5,7 +5,7 @@ let task_1_btn = document.querySelector('#btn-1');
 let task_2_btn = document.querySelector('#btn-2');
 let btn3 = document.querySelector('#btn-3');
 // Task 2
-let task_2_btn_hidden = document.querySelector('#count__btn');
+
 // Task 3
 let number = document.querySelector('#ipt-fibo');
 
@@ -43,13 +43,20 @@ function logIn() {
 }
 
 function addCounter() {
-    let count_block = document.querySelector('.container__btn--click');
-    count_block.style.display = 'block';
-}
+    let div = document.createElement('div');
+    let span = document.createElement('span');
+    let button = document.createElement('button');
 
-function counting() {
-    let span = document.querySelector('#count');
-    span.textContent = +span.textContent + 1;
+    span.textContent = '0';
+    button.textContent = 'Add One';
+
+    div.appendChild(span);
+    div.appendChild(button);
+    cont_2.appendChild(div);
+
+    button.addEventListener('click', function (){
+        span.textContent = +span.textContent+1;
+    });
 }
 
 function fibonachi(n) {
