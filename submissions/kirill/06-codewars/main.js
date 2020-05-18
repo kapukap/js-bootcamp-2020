@@ -66,8 +66,10 @@ console.log(listToArray(arrayToList([10, 20, 30])));
 // deepEqual
 function deepEqual(a, b) {
     if (typeof a === typeof b) {
-        if (JSON.stringify(a) === JSON.stringify(b)) {
-            return true;
+        for (let i in a) {
+            if (Object.prototype.hasOwnProperty(a, i) && Object.prototype.hasOwnProperty(b, i)){
+                return deepEqual(a[i], b[i]);
+            }
         }
     }
     return false;
