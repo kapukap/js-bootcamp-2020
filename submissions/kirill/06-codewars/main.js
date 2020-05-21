@@ -1,16 +1,8 @@
 // sum of range
 function range(a, b, step = 1) {
     let arr = [];
-    if (b > a) {
-        for (let i = a; i <= b; i += step) {
-            arr.push(i);
-        }
-    }
-
-    if (a > b) {
-        for (let i = a; i >= b; i += step) {
-            arr.push(i);
-        }
+    for (let i = a; i <= b; i += step) {
+        arr.push(i);
     }
     return arr;
 }
@@ -67,7 +59,7 @@ console.log(listToArray(arrayToList([10, 20, 30])));
 function deepEqual(a, b) {
     if (typeof a === typeof b) {
         for (let i in a) {
-            if (Object.prototype.hasOwnProperty(a, i) && Object.prototype.hasOwnProperty(b, i)){
+            if (Object.prototype.hasOwnProperty(a, i) && Object.prototype.hasOwnProperty(b, i)) {
                 return deepEqual(a[i], b[i]);
             }
         }
