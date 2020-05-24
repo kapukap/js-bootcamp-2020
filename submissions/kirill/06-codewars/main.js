@@ -41,13 +41,15 @@ function arrayToList(arr) {
 
 console.log(arrayToList([10, 20]));
 
-function listToArray(obj) {
-    let arr = [];
-    let json = JSON.stringify(obj);
-    json = json.replace(/["'\b]/g, ''); // убираем символы кавычек и пробелы с json-a
-    json = json.match(/(value:\d{1,10})/g); // отбираем объекты с ключами values и их значениями
-    json.map(item => arr.push(+item.match(/\d{1,10}/g))); // перебираем массив и заносим в новый массив числа
-    return arr;
+function listToArray(obj){
+    let array = [];
+    let i = obj;
+
+    while (i) {
+        array.push(i.value);
+        i = i.rest;
+    }
+    return array;
 }
 
 console.log(listToArray(arrayToList([10, 20, 30])));
