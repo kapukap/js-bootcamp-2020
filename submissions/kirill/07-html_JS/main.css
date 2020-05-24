@@ -55,10 +55,8 @@ body {
 
 
 .container__input {
-    display: none; /*Убераем кнопку*/
-
+    display: none;
 }
-
 
 .container__input:checked ~ .container__content {
     display: block;
@@ -68,7 +66,6 @@ body {
     /*transform: rotate(180deg);*/
     transform: translateY(-50%) rotate(0.5turn);
 }
-
 
 .container__img {
     /*background-size: cover;*/
@@ -87,16 +84,13 @@ body {
 
 }
 
-
 .container__img img:hover {
     opacity: 1;
 }
 
-
 .big_image img {
     top: -125px;
 }
-
 
 .container__btn--click{
     display: none;
