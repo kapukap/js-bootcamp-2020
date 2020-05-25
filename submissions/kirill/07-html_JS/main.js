@@ -1,13 +1,13 @@
 // Task 1
-let signInContainer = document.querySelector('#signInContainer');
-let singInBtn = document.querySelector('#singInBtn');
+const signInContainer = document.querySelector('#signInContainer');
+const singInBtn = document.querySelector('#singInBtn');
 // Task 2
-let countersContainer = document.querySelector('#countersContainer');
-let addCounterBtn = document.querySelector('#addCounterBtn');
+const countersContainer = document.querySelector('#countersContainer');
+const addCounterBtn = document.querySelector('#addCounterBtn');
 // Task 3
-let fibonacciContainer = document.querySelector('#fibonacciContainer');
-let number = document.querySelector('#fibonacciInput');
-let fibonacciBtn = document.querySelector('#fibonacciBtn');
+const fibonacciContainer = document.querySelector('#fibonacciContainer');
+const number = document.querySelector('#fibonacciInput');
+const fibonacciBtn = document.querySelector('#fibonacciBtn');
 
 function logIn() {
     let logInReturn;
