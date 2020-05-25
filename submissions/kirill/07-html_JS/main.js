@@ -1,13 +1,10 @@
 // Task 1
 const signInContainer = document.querySelector('#signInContainer');
-const singInBtn = document.querySelector('#singInBtn');
 // Task 2
 const countersContainer = document.querySelector('#countersContainer');
-const addCounterBtn = document.querySelector('#addCounterBtn');
 // Task 3
 const fibonacciContainer = document.querySelector('#fibonacciContainer');
 const number = document.querySelector('#fibonacciInput');
-const fibonacciBtn = document.querySelector('#fibonacciBtn');
 
 function logIn() {
     let logInReturn;
@@ -62,10 +59,10 @@ function fibonacchi(n) {
     return n <= 1 ? n : fibonacchi(n - 1) + fibonacchi(n - 2);
 }
 
-singInBtn.addEventListener('click', logIn);
-addCounterBtn.addEventListener('click', addCounter);
+document.querySelector('#singInBtn').addEventListener('click', logIn);
+document.querySelector('#addCounterBtn').addEventListener('click', addCounter);
 
-fibonacciBtn.addEventListener('click', function () {
+document.querySelector('#fibonacciBtn').addEventListener('click', function () {
     let numb = fibonacchi(number.value);
     let div = document.createElement('div');
 
