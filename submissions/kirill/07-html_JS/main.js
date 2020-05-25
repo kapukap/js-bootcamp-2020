@@ -10,7 +10,7 @@ let number = document.querySelector('#fibonacciInput');
 let fibonacciBtn = document.querySelector('#fibonacciBtn');
 
 function logIn() {
-    let rtn;
+    let logInReturn;
     let data = {
         name: 'Admin',
         pass: 'Я Главный'
@@ -21,24 +21,24 @@ function logIn() {
         let passAnswer = prompt('Пароль?');
 
         if (passAnswer === data.pass) {
-            rtn = 'Здравствуйте';
+            logInReturn = 'Здравствуйте';
         } else if (passAnswer === null || passAnswer === '') {
-            rtn = 'Отменено';
+            logInReturn = 'Отменено';
         } else {
-            rtn = 'Не верный пароль';
+            logInReturn = 'Не верный пароль';
         }
     } else if (nameAnswer === null || nameAnswer === '') {
-        rtn = 'Отменено';
+        logInReturn = 'Отменено';
     } else {
-        rtn = 'I don\'t know you';
+        logInReturn = 'I don\'t know you';
     }
 
 
     let div = document.createElement('div');
-    div.textContent = rtn;
+    div.textContent = logInReturn;
     signInContainer.appendChild(div);
 
-    return rtn;
+    return logInReturn;
 }
 
 function addCounter() {
